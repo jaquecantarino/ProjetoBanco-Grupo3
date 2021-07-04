@@ -40,14 +40,19 @@ programa{
 		}senao se (op==0){
  //Conta Poupança
  //CLARA
-		/* 	CÓDIGO COM ERRO - LOOPING.
-		 *  	
-		   
-		  	limpa()
+		real saldo=0.00,saldoPoupanca=0.00
+		caracter d,D,c,C //opção de d,D é débito e c,C é crédito
+		caracter opP
+		inteiro numero //equivale ao número da conta
+
+  		  	limpa()
 		  	escreva("Banco G3")
 			escreva("\nSeu dinheiro em desenvolvimento!\n")
 			escreva("\n")
 			escreva("Tipo:",Menu[op],"\n\n")
+			conta = Util.sorteia(000000,999999)
+			escreva("Número: ",conta,"-0")
+			escreva("\n\nFaça um crédito para iniciar sua conta.\n")
 
 			para(inteiro x=1;x<=10;x++){
 				caracter confirma
@@ -63,7 +68,7 @@ programa{
 
 				
 				enquanto (confirma!='S' e confirma!='N' e confirma!='s' e confirma!='n'){
-					escreva("Deseja fazer uma operação? (digite S ou N) \n")
+					escreva("Deseja fazer uma operação? S-Sim ou N-Não: ")
 					leia(confirma)
 					se (confirma!='S' e confirma!='N' e confirma!='s' e confirma!='n'){
 						escreva("Senhor(a), tem que ser S ou N. Tente de novo...\n\n")
@@ -73,7 +78,7 @@ programa{
 							
 				se(confirma=='s' ou confirma=='S'){
 				enquanto (opP!='D' e opP!='C' e opP!='d' e opP!='c'){
-					escreva("Qual movimentação deseja realizar? (digite D ou C) \n")
+					escreva("Qual movimentação deseja realizar? D-Débito ou C-Credito: ")
 					leia(opP)
 					se (opP!='D' e opP!='C' e opP!='d' e opP!='c'){
 						escreva("Senhor(a), tem que ser D ou C. Tente de novo...\n\n")
@@ -81,7 +86,7 @@ programa{
 				}
 
 					//limpa()
-					escreva("Qual o valor da operação? \n")
+					escreva("Qual o valor da operação?")
 					leia(valor)
 
 				
@@ -91,14 +96,14 @@ programa{
 						se(valor>saldoPoupanca){
 							escreva("Saldo insuficiente\n")
 							escreva("Saldo atual: "+saldoPoupanca)
-							escreva("\n Digite o valor a debitar: ")
+							escreva("\n Digite o valor a debitar: (para sair use 0) ")
 							leia(valor)
 							
 						}senao{
-							escreva("Conta poupança zerada. Faça um crédito para continuar.")
-							escreva("Qual movimentação deseja realizar? (digite D ou C) \n")
-							leia(opP)
-							//saldoInsuficiente='N'
+							//escreva("\nConta poupança zerada. Faça um crédito para continuar.")
+							//escreva("\nQual movimentação deseja realizar? D-Débito ou C-Credito: ")
+							//leia(opP)
+							saldoInsuficiente='N'
 						}
 					}
 				}
@@ -106,7 +111,7 @@ programa{
 				se(opP=='D' ou opP=='d'){
 					se(valor<=0){
 						escreva("O valor digitado é inválido\n")
-						escreva("\n Digite o valor a debitar: ")
+						escreva("\n Digite o valor a debitar (para sair use 0) : ")
 						leia(valor)
 				}
 					}
@@ -114,17 +119,19 @@ programa{
 				se(opP=='C' ou opP=='c'){
 					se(valor<=0){
 						escreva("O valor digitado é inválido\n")
-						escreva("Digite o valor a creditar: ")
+						escreva("Digite o valor a creditar (para sair use 0) :")
 						leia(valor)
 					}
 				}
 				
 				enquanto (confirma!='S' e confirma!='N' e confirma!='s' e confirma!='n'){
-					escreva("Confirma operação? (digite S ou N) \n")
+					escreva("Confirma operação? S-Sim ou N-Não: ")
 					leia(confirma)
 					se (confirma!='S' e confirma!='N' e confirma!='s' e confirma!='n'){
 						escreva("Senhor(a), tem que ser S ou N. Tente de novo...\n\n")
-					}
+					} senao se (confirma=='n' ou confirma=='N'){
+						pare
+						}
 				}
 				
 				se(confirma=='s' ou confirma=='S'){
@@ -152,10 +159,10 @@ programa{
 				escreva("Saldo data de Aniversário: "+mat.arredondar(saldoPoupanca, 2)+"\n\n")
 			}
 			se(saldoPoupanca>=20){
-				caracter titulo
+				caracter titulo //ADIÇÃO DE TITULO DE CAPITALIZAÇÃO
 				escreva("Deseja fazer um título de capitalização?? Hoje pode ser seu dia de sorte!! \n")
 				escreva("OBS: será debitado de sua conta poupança \n")
-				escreva("Digite 'S' para confirmar: \n")
+				escreva("Digite 'S' para confirmar:")
 				leia(titulo)
 				se(titulo=='s' ou titulo=='S'){
 					saldoPoupanca -= 20
@@ -165,7 +172,7 @@ programa{
 				escreva("Transação finalizada")
 				}
 			}
-		 */
+		
 		 		escreva("\n\nDeseja voltar ao Menu principal? S-Sim ou N-Não: ")
 				leia(voltaMenu)
 					se(voltaMenu=='s' ou voltaMenu=='S'){
@@ -469,7 +476,7 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4912; 
+ * @POSICAO-CURSOR = 3997; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
