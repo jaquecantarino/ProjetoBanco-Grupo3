@@ -109,7 +109,7 @@ programa{
 				}
 
 				se(opP=='D' ou opP=='d'){
-					se(valor<=0){
+					se(valor<0){
 						escreva("O valor digitado é inválido\n")
 						escreva("\n Digite o valor a debitar (para sair use 0) : ")
 						leia(valor)
@@ -186,12 +186,11 @@ programa{
 
 
 		} senao se (op==1){
- //Conta Corrente
-//JEFFERSON
 		limpa()
 		escreva("Void\n")
 				escreva("       Void\n")
 						escreva("              Void\n")
+		escreva("Será adicionado no próximo release ")
 
 		escreva("\n\nDeseja voltar ao Menu principal? S-Sim ou N-Não: ")
 				leia(voltaMenu)
@@ -476,7 +475,7 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3997; 
+ * @POSICAO-CURSOR = 5251; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
