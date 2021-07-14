@@ -10,6 +10,7 @@ abstract class  Conta {
 		//construtor
 		public Conta(int numero, double saldo) {
 			super();
+			this.saldo=saldo;
 			this.numero = numero;
 		}
 		
