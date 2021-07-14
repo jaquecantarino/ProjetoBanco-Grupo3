@@ -26,6 +26,7 @@ public class ProjetoG3Bank {
 		int numero = 0;
 
 		numero = (int) (Math.random() * 99999); // sorteia número aleatorio para o numero de conta.
+		
 		// instanciando as contas de acordo com as subclasses
 		ContaPoupanca poupanca = new ContaPoupanca(numero, saldoPoup, 14);
 		ContaCorrente corrente = new ContaCorrente(numero, 0, 3);
@@ -62,9 +63,8 @@ public class ProjetoG3Bank {
 					System.out.println(new String(new char[50]).replace("\0", "\r\n"));
 					System.out.println("Volte Sempre!");
 					System.out.println("Banco G3");
-					System.out.println("Seu dinheiro em desenvolvimento!\n");
-					break;
-				}
+					System.out.println("Seu dinheiro em desenvolvimento!\n");	
+				} break;
 
 			}
 			// CONTA POUPANÇA - CLARA.
@@ -75,7 +75,7 @@ public class ProjetoG3Bank {
 				poupanca.inicioPoupanca();
 
 				for (int x = 0; x <= 9; x++) {
-					System.out.println("Movimento " + (x + 1));
+					System.out.println("Movimento " + (x + 1)); // mostra o movimento que está sendo feito.
 					System.out.println("Qual operação você deseja efetuar? C-Crédito ou D-Débito");
 					char op = leia.next().toUpperCase().charAt(0);
 					System.out.println("Qual valor da operação?");
@@ -135,6 +135,7 @@ public class ProjetoG3Bank {
 					corrente.opcoes(op, valorOperacao);
 
 					System.out.println("Saldo Atual: " + corrente.getSaldo());
+					
 					if (corrente.getTalao() > 0) {
 						System.out.println("Talões: " + corrente.getTalao());
 						System.out.println("\nDeseja um talão de cheque? S-Sim ou N-Não ");

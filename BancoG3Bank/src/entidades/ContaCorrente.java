@@ -24,6 +24,8 @@ public class ContaCorrente extends Conta {
 		talao=3;
 		if(pedido<=0) {
 			System.out.println("Valor inválido!\n");
+		} else if (pedido>talao) {
+			System.out.println("Quantidade ultrapassa o limite");
 		} else if(pedido<=talao && saldo>(pedido*30.00)) {
 			saldo = saldo - (pedido*30.00);
 			talao-=pedido;
