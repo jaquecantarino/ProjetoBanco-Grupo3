@@ -10,11 +10,10 @@ import entidades.ContaEstudante;
 import entidades.ContaPoupanca;
 
 public class ProjetoG3Bank {
-//FAZER CONTA ESPECIAL
 
 //PROJETO BANCO - PRODUZIDO NO PRIMEIRO MÓDULO
 //POR: 
-// CLARA MONTANHEZ, GUSTAVO AUGUSTO, JAQUELINE CANTARINO, WESLEY LUAN;
+// CLARA MONTANHEZ, GUSTAVO AUGUSTO, JAQUELINE CANTARINO, JEFFERSON , WESLEY LUAN;
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
 
@@ -26,21 +25,24 @@ public class ProjetoG3Bank {
 		double saldoPoup = 0; // Criamos essa var para testar outro metodo de armazenar saldo.
 		int numero = 0;
 
-		numero = (int) (Math.random() * 10001); // sorteia número aleatorio para o numero de conta.
-		//instanciando as contas de acordo com as subclasses
+		numero = (int) (Math.random() * 99999); // sorteia número aleatorio para o numero de conta.
+		// instanciando as contas de acordo com as subclasses
 		ContaPoupanca poupanca = new ContaPoupanca(numero, saldoPoup, 14);
 		ContaCorrente corrente = new ContaCorrente(numero, 0, 3);
 		ContaEspecial especial = new ContaEspecial(numero, 0, 1000);
 		ContaEmpresa empresa = new ContaEmpresa(numero, 0.00, 10000.00);
 		ContaEstudante estudante = new ContaEstudante(numero, 0.00, 5000.00);
-		Banner banner = new Banner ();
-		
-		banner.banner();
-		
+		Banner banner = new Banner();
+		// fim das instancias de conta.
+
+		banner.banner(); // chama banner, arte do banco.
+
+		// nome e slogan.
 		System.out.println("G3 Bank");
-		System.out.println("Se dinheiro em desenvolvimento!\n");
-		
-		for (int y = 0; y < 10000; y++) { // super for, controla todo o código, reserva os valores dentros dos atributos.
+		System.out.println("Seu dinheiro em desenvolvimento!\n");
+
+		for (int y = 0; y < 10000; y++) { // super for, controla todo o código, reserva os valores dentros dos
+											// atributos.
 
 			for (int x = 0; x < 6; x++) { // for do MENU roda as 6 opção.
 				System.out.println((x + 1) + "-" + menu[x] + "\n");
@@ -61,13 +63,14 @@ public class ProjetoG3Bank {
 					System.out.println("Volte Sempre!");
 					System.out.println("Banco G3");
 					System.out.println("Seu dinheiro em desenvolvimento!\n");
+					break;
 				}
 
 			}
 			// CONTA POUPANÇA - CLARA.
 			else if (opcao == 1) {
 				int interacao = 1;
-				
+
 				poupanca.inicial();
 				poupanca.inicioPoupanca();
 
@@ -162,6 +165,7 @@ public class ProjetoG3Bank {
 					if (continuar == 'N') {
 						System.out.println("Saldo Atual: " + corrente.getSaldo());
 						System.out.println("Talões: " + corrente.getTalao() + "\n\n");
+
 						System.out.println("\nDeseja voltar ao Menu? S-Sim ou N-Não");
 						voltaMenu = leia.next().toUpperCase().charAt(0);
 						if (voltaMenu == 'S') {
@@ -235,6 +239,7 @@ public class ProjetoG3Bank {
 
 				for (int x = 0; x <= 9; x++) {
 					System.out.println("Movimento " + (x + 1));
+
 					if (empresa.getEmprestimo() > 0) {
 						System.out.printf("Gostaria de um emprestimo? S-Sim ou N-Não");
 						char emp = leia.next().toUpperCase().charAt(0);

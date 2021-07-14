@@ -43,6 +43,7 @@ public class ContaPoupanca extends Conta {
 			} else if (valorOperacao > 0) {
 			this.saldoPoup = this.saldoPoup + valorOperacao;
 			}	
+			
 		} else if (opcao == 'D') {
 			if(valorOperacao <= 0 ) {
 				System.out.println("Valor invalido!\n");
